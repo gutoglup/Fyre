@@ -1,5 +1,5 @@
 //
-//  CivilizationController.swift
+//  ListCivilizationsViewModel.swift
 //  Fyre
 //
 //  Created by Augusto Cesar do Nascimento dos Reis on 29/04/20.
@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class CivilizationController: ObservableObject {
+class ListCivilizationsViewModel: ObservableObject {
 
     @Published var errorMessage: String = ""
     @Published var showAlert: Bool = false

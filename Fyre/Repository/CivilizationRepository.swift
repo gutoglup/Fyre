@@ -14,27 +14,25 @@ struct CivilizationRepository {
 
     func listCivilizations() -> Future<[CivilizationDTO], Error> {
         let url = "https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations"
-        return Future { promisse in
+        return Future { promise in
             AF.request(url, method: .get).responseData { (response) in
                 switch response.result {
                 case .success(let data):
                     do {
                         if let civilizationsDTO = try JSONDecoder().decode(CivilizationResponseDTO.self, from: data).civilizations {
-                            promisse(.success(civilizationsDTO))
+                            promise(.success(civilizationsDTO))
                         } else {
-                            promisse(.failure(RepositoryError.notFound))
+                            promise(.failure(RepositoryError.notFound))
                         }
                     } catch (let error) {
-                        promisse(.failure(error))
+                        promise(.failure(error))
                     }
                 case .failure(let error):
-                    promisse(.failure(error))
+                    promise(.failure(error))
                 }
             }
         }
     }
-    
-    
 }
 
 enum RepositoryError: Error {

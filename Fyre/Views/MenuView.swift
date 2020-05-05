@@ -16,46 +16,71 @@ struct MenuView: View {
         Menu(id: 0, name: "Structures", description: "The structures types of game"),
         Menu(id: 0, name: "Technologies", description: "The technologies and evolutions")
     ]
+    @State var isListCivilizationsViewPushed = false
+    @State var isListUnitsViewPushed = false
     
     var body: some View {
         NavigationView {
             VStack {
-                QGrid(options, columns: 2) {
-                    
-                    GridCell(option: $0)
-                    
+                QGrid(options, columns: 2) { content in
+                    GridCell(option: content).onTapGesture {
+                        self.onPressButton(menu: content)
+                    }
                 }
+                NavigationLink(destination: ListCivilizationsView(), isActive: $isListCivilizationsViewPushed) {
+                    EmptyView()
+                }.hidden()
+                NavigationLink(destination: ListUnitsView(), isActive: $isListUnitsViewPushed) {
+                    EmptyView()
+                }.hidden()
             }.navigationBarTitle("Fyre")
-        }.background(Color("background"))
+        }
+        .background(Color("background"))
+        .onAppear {
+            self.viewDidAppear()
+        }
+    }
+    
+    func viewDidAppear() {
+        self.isListCivilizationsViewPushed = false
+        self.isListUnitsViewPushed = false
+    }
+    
+    func onPressButton(menu: Menu) {
+        switch menu.id {
+        case 0: self.isListCivilizationsViewPushed = true
+        case 1: self.isListUnitsViewPushed = true
+        default: break
+        }
     }
 }
 
 struct GridCell: View {
     var option: Menu
     var body: some View {
-        NavigationLink(destination: CivilizationDetailView()) {
-            VStack() {
-                Text(option.name)
-                    .font(.system(size: 18, weight: .medium, design: .default))
-                    .foregroundColor(Color("title"))
-                    .padding(.top, 12)
-                    .padding(.horizontal, 8)
-                    .padding(.bottom, 6)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                Text(option.description)
-                    .foregroundColor(.gray)
-                    .padding(.horizontal, 8)
-                    .padding(.bottom, 12)
-                    .multilineTextAlignment(.center)
-                    .font(.caption)
-                    .lineLimit(2)
-                    .layoutPriority(1)
-                Spacer().frame(minHeight: 0,  maxHeight: 60)
-            }
-            .background(Color("backgroundCell"))
-            .cornerRadius(12)
+        //        NavigationLink(destination: CivilizationDetailView()) {
+        VStack() {
+            Text(option.name)
+                .font(.system(size: 18, weight: .medium, design: .default))
+                .foregroundColor(Color("title"))
+                .padding(.top, 12)
+                .padding(.horizontal, 8)
+                .padding(.bottom, 6)
+                .frame(maxWidth: .infinity, alignment: .center)
+            Text(option.description)
+                .foregroundColor(.gray)
+                .padding(.horizontal, 8)
+                .padding(.bottom, 12)
+                .multilineTextAlignment(.center)
+                .font(.caption)
+                .lineLimit(2)
+                .layoutPriority(1)
+            Spacer().frame(minHeight: 0,  maxHeight: 60)
         }
+        .background(Color("backgroundCell"))
+        .cornerRadius(12)
     }
+    //    }
 }
 
 struct MenuView_Previews: PreviewProvider {
