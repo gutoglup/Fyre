@@ -13,11 +13,13 @@ struct MenuView: View {
     var options: [Menu] = [
         Menu(id: 0, name: "Civilizations", description: "The civilizations history"),
         Menu(id: 1, name: "Units", description: "The unit description"),
-        Menu(id: 0, name: "Structures", description: "The structures types of game"),
-        Menu(id: 0, name: "Technologies", description: "The technologies and evolutions")
+        Menu(id: 2, name: "Structures", description: "The structures types of game"),
+        Menu(id: 3, name: "Tecnologies", description: "The tecnologies and evolutions")
     ]
     @State var isListCivilizationsViewPushed = false
     @State var isListUnitsViewPushed = false
+    @State var isListStructuresViewPushed = false
+    @State var isListTecnologiesViewPushed = false
     
     var body: some View {
         NavigationView {
@@ -33,6 +35,12 @@ struct MenuView: View {
                 NavigationLink(destination: ListUnitsView(), isActive: $isListUnitsViewPushed) {
                     EmptyView()
                 }.hidden()
+                NavigationLink(destination: ListStructuresView(), isActive: $isListStructuresViewPushed) {
+                    EmptyView()
+                }.hidden()
+                NavigationLink(destination: ListTechnologiesView(), isActive: $isListTecnologiesViewPushed) {
+                    EmptyView()
+                }.hidden()
             }.navigationBarTitle("Fyre")
         }
         .background(Color("background"))
@@ -44,12 +52,16 @@ struct MenuView: View {
     func viewDidAppear() {
         self.isListCivilizationsViewPushed = false
         self.isListUnitsViewPushed = false
+        self.isListStructuresViewPushed = false
+        self.isListTecnologiesViewPushed = false
     }
     
     func onPressButton(menu: Menu) {
         switch menu.id {
         case 0: self.isListCivilizationsViewPushed = true
         case 1: self.isListUnitsViewPushed = true
+        case 2: self.isListStructuresViewPushed = true
+        case 3: self.isListTecnologiesViewPushed = true
         default: break
         }
     }

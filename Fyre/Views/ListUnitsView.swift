@@ -13,8 +13,10 @@ struct ListUnitsView: View {
     @ObservedObject var controller = ListUnitsViewModel()
     
     var body: some View {
-        List(controller.units.indices, id: \.self) {index in
-            ListDetailCell(name: self.$controller.units[index].name, expansion: self.$controller.units[index].expansion)
+        List(controller.units.indices, id: \.self) { index in
+            ListDetailCell(
+                name: self.$controller.units[index].name,
+                expansion: self.$controller.units[index].expansion)
         }
         .navigationBarTitle("Units")
         .onAppear(perform: controller.fetchMilitaryUnits)

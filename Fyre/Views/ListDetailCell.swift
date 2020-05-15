@@ -22,12 +22,15 @@ struct ListDetailCell: View {
                 Text(expansion ?? "")
                     .font(.subheadline)
                     .foregroundColor(Color("subtitle"))
+                
             }
-            
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
             Spacer()
         }
-        .cornerRadius(10)
         .background(Color("backgroundCell"))
+        .cornerRadius(8)
+        
     }
 }
 
