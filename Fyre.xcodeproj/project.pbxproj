@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F57CE18247BF4B700E25A5D /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F57CE17247BF4B700E25A5D /* HostingController.swift */; };
 		4F64D0B22458AD8900CB5435 /* QGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 4F64D0B12458AD8900CB5435 /* QGrid */; };
 		4F64D0B62458B06800CB5435 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F64D0B52458B06800CB5435 /* Menu.swift */; };
 		4F64D0B82458B6C500CB5435 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F64D0B72458B6C500CB5435 /* Colors.xcassets */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F57CE17247BF4B700E25A5D /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		4F64D0B52458B06800CB5435 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		4F64D0B72458B6C500CB5435 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		4F64D0BD2458C67900CB5435 /* ListCivilizationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCivilizationsView.swift; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F57CE16247BF49700E25A5D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4F57CE17247BF4B700E25A5D /* HostingController.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		4F64D0B32458B04F00CB5435 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +248,7 @@
 		4FB027312458A45600E36013 /* Fyre */ = {
 			isa = PBXGroup;
 			children = (
+				4F57CE16247BF49700E25A5D /* Extension */,
 				4F64D0BC2458BADE00CB5435 /* Delegate */,
 				4F64D0B32458B04F00CB5435 /* Model */,
 				4F64D0C92459AC5C00CB5435 /* ViewModel */,
@@ -455,6 +466,7 @@
 				4FE92BD82461D4BA002A69B5 /* MilitaryUnitResponseDTO.swift in Sources */,
 				4F85BF60246EF86C008AC02A /* Technology.swift in Sources */,
 				4F85BF64246EF9C8008AC02A /* ListTechnologiesViewModel.swift in Sources */,
+				4F57CE18247BF4B700E25A5D /* HostingController.swift in Sources */,
 				4FB027332458A45600E36013 /* AppDelegate.swift in Sources */,
 				4F64D0C82459A90900CB5435 /* CivilizationDTO.swift in Sources */,
 				4FB027552458AABC00E36013 /* MenuView.swift in Sources */,

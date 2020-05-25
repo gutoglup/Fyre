@@ -21,31 +21,48 @@ struct MenuView: View {
     @State var isListStructuresViewPushed = false
     @State var isListTecnologiesViewPushed = false
     
+    init() {
+        UINavigationBar.appearance().backgroundColor = UIColor(named: "background")
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "title") ?? .white]
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "title") ?? .white]
+    }
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                QGrid(options, columns: 2) { content in
-                    GridCell(option: content).onTapGesture {
-                        self.onPressButton(menu: content)
-                    }
+        ZStack{
+            VStack() {
+                Rectangle()
+                    .foregroundColor(Color("background"))
+                    .edgesIgnoringSafeArea(.top)
+                    .frame(height: 0)
+                
+                NavigationView {
+                    VStack {
+                        QGrid(options, columns: 2) { content in
+                            GridCell(option: content).onTapGesture {
+                                self.onPressButton(menu: content)
+                            }
+                        }
+                        
+                        NavigationLink(destination: ListCivilizationsView(), isActive: $isListCivilizationsViewPushed) {
+                            EmptyView()
+                        }.hidden()
+                        NavigationLink(destination: ListUnitsView(), isActive: $isListUnitsViewPushed) {
+                            EmptyView()
+                        }.hidden()
+                        NavigationLink(destination: ListStructuresView(), isActive: $isListStructuresViewPushed) {
+                            EmptyView()
+                        }.hidden()
+                        NavigationLink(destination: ListTechnologiesView(), isActive: $isListTecnologiesViewPushed) {
+                            EmptyView()
+                        }.hidden()
+                    }.navigationBarTitle("Fyre")
+                        .background(Color("background"))
                 }
-                NavigationLink(destination: ListCivilizationsView(), isActive: $isListCivilizationsViewPushed) {
-                    EmptyView()
-                }.hidden()
-                NavigationLink(destination: ListUnitsView(), isActive: $isListUnitsViewPushed) {
-                    EmptyView()
-                }.hidden()
-                NavigationLink(destination: ListStructuresView(), isActive: $isListStructuresViewPushed) {
-                    EmptyView()
-                }.hidden()
-                NavigationLink(destination: ListTechnologiesView(), isActive: $isListTecnologiesViewPushed) {
-                    EmptyView()
-                }.hidden()
-            }.navigationBarTitle("Fyre")
-        }
-        .background(Color("background"))
-        .onAppear {
-            self.viewDidAppear()
+                .onAppear {
+                    self.viewDidAppear()
+                }
+            }
+            .background(Color("background"))
         }
     }
     
@@ -70,7 +87,6 @@ struct MenuView: View {
 struct GridCell: View {
     var option: Menu
     var body: some View {
-        //        NavigationLink(destination: CivilizationDetailView()) {
         VStack() {
             Text(option.name)
                 .font(.system(size: 18, weight: .medium, design: .default))
@@ -80,7 +96,7 @@ struct GridCell: View {
                 .padding(.bottom, 6)
                 .frame(maxWidth: .infinity, alignment: .center)
             Text(option.description)
-                .foregroundColor(.gray)
+                .foregroundColor(Color("subtitle"))
                 .padding(.horizontal, 8)
                 .padding(.bottom, 12)
                 .multilineTextAlignment(.center)
@@ -92,7 +108,6 @@ struct GridCell: View {
         .background(Color("backgroundCell"))
         .cornerRadius(12)
     }
-    //    }
 }
 
 struct MenuView_Previews: PreviewProvider {

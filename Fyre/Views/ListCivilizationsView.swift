@@ -14,12 +14,12 @@ struct ListCivilizationsView: View {
     @ObservedObject var controller = ListCivilizationsViewModel()
     
     var body: some View {
+        
         List(controller.civilizations.indices, id: \.self) { index in
             ListDetailCell(name: self.$controller.civilizations[index].name , expansion: self.$controller.civilizations[index].expansion )
         }
         .navigationBarTitle("Civilizations")
         .onAppear(perform: controller.fetchCivilizations)
-    
     }
 }
 
