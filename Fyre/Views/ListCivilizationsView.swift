@@ -16,10 +16,17 @@ struct ListCivilizationsView: View {
     var body: some View {
         
         List(controller.civilizations.indices, id: \.self) { index in
-            ListDetailCell(name: self.$controller.civilizations[index].name , expansion: self.$controller.civilizations[index].expansion )
+            NavigationLink(destination:
+            CivilizationDetailView(
+                viewModel: CivilizationDetailViewModel(
+                    civilization: self.controller.civilizations[index]
+            ))) {
+                ListDetailCell(name: self.$controller.civilizations[index].name , expansion: self.$controller.civilizations[index].expansion )
+            }
         }
         .navigationBarTitle("Civilizations")
         .onAppear(perform: controller.fetchCivilizations)
+        .background(Color("background"))
     }
 }
 

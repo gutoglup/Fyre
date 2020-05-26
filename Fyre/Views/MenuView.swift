@@ -57,7 +57,7 @@ struct MenuView: View {
                         }.hidden()
                     }.navigationBarTitle("Fyre")
                         .background(Color("background"))
-                }
+                    }.background(Color("background"))
                 .onAppear {
                     self.viewDidAppear()
                 }

@@ -22,6 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UITableView.appearance().backgroundColor = UIColor(named: "background")
         UITableViewCell.appearance().backgroundColor = UIColor(named: "background")
         UINavigationBar.appearance().tintColor = UIColor(named: "title")
+        UITableView.appearance().allowsSelection = false
+        UITableViewCell.appearance().selectionStyle = .none
         
         // Create the SwiftUI view that provides the window contents.
         let contentView = MenuView()

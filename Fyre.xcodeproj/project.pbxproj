@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F3C3CD1247C522100A86CE6 /* CivilizationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3C3CD0247C522100A86CE6 /* CivilizationDetailView.swift */; };
+		4F3C3CD3247D4FB100A86CE6 /* CivilizationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3C3CD2247D4FB100A86CE6 /* CivilizationDetailViewModel.swift */; };
 		4F57CE18247BF4B700E25A5D /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F57CE17247BF4B700E25A5D /* HostingController.swift */; };
 		4F64D0B22458AD8900CB5435 /* QGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 4F64D0B12458AD8900CB5435 /* QGrid */; };
 		4F64D0B62458B06800CB5435 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F64D0B52458B06800CB5435 /* Menu.swift */; };
@@ -59,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F3C3CD0247C522100A86CE6 /* CivilizationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivilizationDetailView.swift; sourceTree = "<group>"; };
+		4F3C3CD2247D4FB100A86CE6 /* CivilizationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivilizationDetailViewModel.swift; sourceTree = "<group>"; };
 		4F57CE17247BF4B700E25A5D /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		4F64D0B52458B06800CB5435 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		4F64D0B72458B6C500CB5435 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 				4FE92BCC2461CF96002A69B5 /* ListUnitsViewModel.swift */,
 				4FD2E54B24697F7F00A6625E /* ListStructuresViewModel.swift */,
 				4F85BF63246EF9C8008AC02A /* ListTechnologiesViewModel.swift */,
+				4F3C3CD2247D4FB100A86CE6 /* CivilizationDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 				4FD2E54924697F5B00A6625E /* ListStructuresView.swift */,
 				4F85BF61246EF8CC008AC02A /* ListTechnologiesView.swift */,
 				4FE92BCA2461C6D7002A69B5 /* ListDetailCell.swift */,
+				4F3C3CD0247C522100A86CE6 /* CivilizationDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -460,6 +466,7 @@
 				4FE92BD22461D058002A69B5 /* Cost.swift in Sources */,
 				4F85BF58246EF5B1008AC02A /* TechnologyRepository.swift in Sources */,
 				4FD2E54324697BEB00A6625E /* StructureRepository.swift in Sources */,
+				4F3C3CD3247D4FB100A86CE6 /* CivilizationDetailViewModel.swift in Sources */,
 				4FE92BD02461D004002A69B5 /* MilitaryUnit.swift in Sources */,
 				4FE92BCB2461C6D7002A69B5 /* ListDetailCell.swift in Sources */,
 				4FD2E54A24697F5B00A6625E /* ListStructuresView.swift in Sources */,
@@ -472,6 +479,7 @@
 				4FB027552458AABC00E36013 /* MenuView.swift in Sources */,
 				4F64D0D02459ED2200CB5435 /* CivilizationResponseDTO.swift in Sources */,
 				4FB027352458A45600E36013 /* SceneDelegate.swift in Sources */,
+				4F3C3CD1247C522100A86CE6 /* CivilizationDetailView.swift in Sources */,
 				4F64D0B62458B06800CB5435 /* Menu.swift in Sources */,
 				4F64D0BE2458C67900CB5435 /* ListCivilizationsView.swift in Sources */,
 				4F64D0CE2459BAE200CB5435 /* Civilization.swift in Sources */,
